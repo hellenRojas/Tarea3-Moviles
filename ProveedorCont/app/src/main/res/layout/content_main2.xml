@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".Main"
+    style="@style/Base.V11.Theme.AppCompat.Dialog"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="0.08"
+                android:background="#c6cae4"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contacto"
+                    android:id="@+id/textView4"
+                    android:textSize="18dp"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:weightSum="1"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.34">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Nombre:"
+                        android:id="@+id/textView"
+                        android:layout_below="@+id/selectionButton"
+                        android:layout_alignLeft="@+id/selectionButton"
+                        android:layout_alignStart="@+id/selectionButton"
+                        android:textIsSelectable="false"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/letra" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/textView2"
+                        android:text="Teléfono:"
+                        android:layout_below="@+id/contactName"
+                        android:layout_toLeftOf="@+id/sendButton"
+                        android:layout_toStartOf="@+id/sendButton"
+                        android:layout_marginTop="25dp"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/letra" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="133dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.14">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/contactName"
+                        android:layout_below="@+id/selectionButton"
+                        android:layout_alignLeft="@+id/selectionButton"
+                        android:layout_alignStart="@+id/selectionButton"
+                        android:text="_____________" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:id="@+id/contactPhone"
+                        android:layout_below="@+id/contactName"
+                        android:layout_toLeftOf="@+id/sendButton"
+                        android:layout_toStartOf="@+id/sendButton"
+                        android:layout_marginTop="25dp"
+                        android:text="_____________" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="95dp"
+                    android:layout_height="87dp"
+                    android:onClick="initPickContacts"
+                    android:clickable="true"
+                    android:background="@drawable/border"
+                    android:layout_marginLeft="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:onClick="initPickContacts">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/contactPic"
+                            android:layout_alignParentTop="false"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:focusableInTouchMode="false"
+                            android:src="@android:drawable/ic_menu_gallery"
+                            android:layout_below="@+id/selectionButton"
+                            android:layout_toRightOf="@+id/selectionButton"
+                            android:layout_toEndOf="@+id/selectionButton"
+                            android:background="@drawable/border"
+                            android:scaleType="centerCrop" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Seleccionar contacto"
+                            android:id="@+id/tvSelect"
+                            android:allowUndo="false"
+                            android:focusable="false"
+                            android:textSize="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="#8b8686" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0.50"
+            android:onClick="sendMessage">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c6cae4"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mensaje"
+                    android:id="@+id/textView3"
+                    android:textSize="18dp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:layout_marginTop="30dp">
+
+                <EditText
+                    android:layout_width="248dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/msj"
+                    android:layout_below="@+id/contactPhone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignRight="@+id/contactPic"
+                    android:layout_alignEnd="@+id/contactPic"
+                    style="@style/EditTextStyle"
+                    android:layout_weight="0.63"
+                    android:textColor="@color/letra" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton"
+                    android:layout_gravity="bottom"
+                    android:background="#ffffff"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/env"
+                    android:onClick="sendMessage" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

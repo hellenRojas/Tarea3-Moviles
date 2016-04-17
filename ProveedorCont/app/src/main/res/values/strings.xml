@@ -1,0 +1,7 @@
+<resources>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">ReportMe</string>
+    <string name="selectionButton">Seleccionar Contacto</string>
+    <string name="sendButton">Enviar</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
